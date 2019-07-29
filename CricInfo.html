@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRICKET INFO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <style>
+    body{
+        background-color: black;
+    }
+    .header{
+        width:100%;
+        height:5%;
+    }
+    .left{
+        float:left;
+        color:white;
+        text-align: center;
+        width:50%;
+    }
+    .right{
+        float:left;
+        color:white;
+        text-align: center;
+        width:50%;
+    }
+    .right div{
+        float:left;
+        color:white;
+        text-align: center;
+    }
+    h2{
+        color:white;
+        text-align: center;
+        padding-top:100px;
+    }
+    h5{
+        color:white;
+        text-align: center;
+        padding-top:5px;
+    }
+    #pid{
+        margin-left:36.5%;
+        margin-top:20px;
+        height:30px;
+        width:300px
+    }
+    #search{
+        margin-left:48%;          
+        color:white;
+        background-color: black;
+        border: none;
+    }
+    .card-container{    
+        height:700px;
+        width:300px;
+        background-color: white;
+        margin:auto;
+        display:none;
+    }
+  
+    </style>
+     
+    <script>
+    function doAjax(){
+        var id = document.querySelector('#pid').value;
+        if(id!='-1'){
+        var pr = fetch(`http://cricapi.com/api/playerStats?pid=${id}&apikey=A8zoDoPaQgefmB7KunnSuApSgL73`)
+        pr.then(response=>{
+            response.json().then(data=>{
+                console.log('data is ',data);
+                 for(let key in data){
+                     console.log(key);
+                     document.getElementById("main").style="display:block"
+                    if(key=='imageURL'){
+                       let image= document.createElement("img");
+                      image.src=data[key];
+                      image.style="padding:auto;height:300px;width:300px;border:2px solid;"            
+                      let div=document.getElementById("image-contain");
+                      div.appendChild(image);                   
+                    }
+                    else if(
+                        key=='fullName' ||
+                        key=='majorTeams' ||
+                        key=='born'  ||
+                        key=='battingStyle'                      
+                    ){
+                        let div=document.createElement("div");
+                        div.innerText=data[key];
+                        let div1=document.getElementById('image-contain');
+                        div1.appendChild(div);
+                    }
+                 }
+
+
+
+
+
+
+
+
+                
+            }).catch(e=>console.log('Invalid JSON ',e));
+        }).catch(err=>console.log('Server Error ',err));
+        }    
+    }
+     </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="left">CRICKET</div>
+            <div class="right">
+                <div class="mr-4">HOME</div>
+                <div class="mr-4">FEATURES</div>
+                <div class="mr-4">LOGIN</div>
+            </div>
+        </div>
+        <div class="info">
+            <h2>SEARCH YOUR PLAYER WITH THEIR ID</h2>
+            <h5>HERE YOU CAN SEE THE PLAYER DETAILS</h5>
+        </div>
+        <div>
+                <select id="pid">
+                        <option value="-1">Choose Player</option>
+                        <option value="28081">Dhoni</option>
+                        <option value="35320">Sachin</option>
+                        <option value="253802">Virat</option>
+                </select><br><br>
+                <button id="search"onclick="doAjax()">Search</button>
+        </div>
+        <div class="card-container" id="main">
+            <div id="image-contain">           
+            </div>
+            <div id="other"></div>
+
+        </div>
+    </div>>       
+</body>
+</html>
