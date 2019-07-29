@@ -1,0 +1,66 @@
+body{
+    background-color: black;
+}
+.header{
+    width:100%;
+    height:5%;
+}
+.left{
+    float:left;
+    color:white;
+    text-align: left;
+    width:50%;
+}
+.right{
+     float:left; 
+    color:white;
+    text-align: right;
+    width:50%;
+}
+.right div{
+    float:left; 
+    color:white;
+    text-align: right;
+}
+.right div:hover{
+    cursor: pointer;
+    border-bottom:2px solid #e6ee22;
+    transition: 7s ease-in-out;
+}
+h4{
+    margin-top:10px;
+    color:white;
+}
+h3{
+    text-align:center;
+}
+p{
+    margin-top:10px;
+    color:white;
+}
+h1{
+    text-align:center;
+    color:white;    
+}
+.div{
+    margin:auto;
+    padding:auto;
+}
+.hide{
+    display:none;
+}
+.signin{
+    background-color: white;
+    width:50%;
+    margin:auto;
+    padding:auto;
+    height:50%;   
+}
+.signup{
+    background-color:white;
+    width:50%;
+    height:50%;
+    margin:auto;
+    padding:auto;
+    display:none;
+}

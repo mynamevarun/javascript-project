@@ -1,0 +1,33 @@
+<style>
+.quiz-head{
+  margin-top:50px;
+  font-size:30px;
+}
+.answers{
+  background-color: grey;
+  color:white;
+}
+.testButton{
+  margin-top:5%;
+}
+.text-center{
+  color:white;
+  font-size:30px;
+  font-family:Arial;
+}
+</style>
+<!-- <script src="scripts/student/quizcontroller.js" async=false></script> -->
+<h1 class="quiz-head">Quiz on Important Facts</h1>
+<div id="jump" class="text-left float-left"></div>
+<div id="results" class="float-left text-center"></div>
+<div class="text-right ">TIMER<span id="timer" class="text-right ml-5 pr-5" style="color:white;"></span></div>
+<div id="quiz-body" class="quiz-container" onload="init1()">
+  <div id="quiz"></div>
+</div>
+<div class="testButton">
+<button id="previous">Previous Question</button>
+<button id="next1">Next Question</button>
+<button id="submit">Submit Quiz</button>
+</div>
+<div id="results"></div>
+<div id="timer" class="text-left ml-5" style="color:white"></div>

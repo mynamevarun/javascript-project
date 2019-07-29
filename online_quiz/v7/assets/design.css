@@ -1,0 +1,15 @@
+.hand{
+    cursor: pointer;
+}
+.searchbox{
+    display: none;
+}
+.box-sort{
+    display:none;
+}
+.sortbox{
+    display: none;
+}
+.hide{
+    display:none;
+}

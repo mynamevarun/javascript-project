@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JAVASCRIPT QUIZ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/main.css"> 
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script src="scripts/utils/firebase.js"></script>
+    <script src="scripts/utils/loginmodel.js"></script>
+    <script src="scripts/utils/main.js"></script>
+
+    <!-- <script src="scripts/login.js"></script> -->
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="left">JAVASCRIPT</div>
+            <div class="right">
+                <div class="mr-4">HOME</div>
+                <div class="mr-4">FEATURES</div>
+                <div class="mr-4">LOGIN</div>
+            </div>
+        </div>               
+    </div>
+    <div class="container-box">
+        <h4 class="ml-5 pt-5 text-center">Welcome to JAVASCRIPT.COM!</h4>
+        <p class="ml-5 pt-2 text-center">Here, you can read the JAVASCRIPT questions and answers for your interview and entrance exams preparation.</p>
+        <h1 class="ml-5 pt-4 text-center">TEST YOUR SKILLS HERE</h1> 
+        <div class="div text-center mt-3"><button id="login" class="btn btn-primary">LOGIN</button></div>
+    </div> 
+    <!-- login area start   -->
+    <div id="sign" class="signin mt-5" >
+            <div id="login"class='container'>
+                <h1 class='alert-success text-center'>Login Page</h1>
+                <h3>LOGIN AS</h3>                
+                 <div class="text-center"> <label for="" class="mr-2"><input type="radio" class="mt-4 " name="login" value="student">Student</label>
+                    <label for=""><input type="radio" class="mt-4 " name="login" value="admin">Admin</label>
+                </div>
+                <h3 class='alert-danger' id='error'></h3>
+                <div class='form-group'>
+                        <label for="">Userid</label>
+                        <input class='form-control' id="userid" type="text" placeholder="Type Userid Here" required>   
+                </div>
+                <div class='form-group'>
+                        <label for="">Password</label>
+                        <input class='form-control' id="password" placeholder="Type Password Here" type="password" required>
+                </div> 
+                <div class='form-group text-center'>
+                        <button id="dologin" class='btn btn-primary text-center'>Login</button>                        
+                        <button id="toggleReg" class='btn btn-danger text-center'>Register</button> 
+                </div> 
+            </div> 
+    </div>
+     <!-- login area end   -->
+     <!-- Register strat -->
+     <div id="upsign"class="signup">
+            <div class="div-popup" id="myForm">
+                <div  class="div-container">
+                      <h3 class="alert-success">Register</h3>      
+                      <div class='form-group'>           
+                           <label for="email"><b>Email</b></label>
+                           <input type="text" id="remail"class="form-control" placeholder="Enter Email" name="email" required>
+                      </div> 
+                      <div class='form-group'>  
+                           <label for="userid"><b>UserId</b></label>
+                           <input type="text" id="ruser" class="form-control" placeholder="Enter userId" name="userid" required>
+                      </div>
+                      <div class='form-group'>  
+                           <label for="psw"><b>Password</b></label>
+                           <input type="password" id="rpass"class="form-control" placeholder="Enter Password" name="psw" required>
+                      </div>
+                      <div class='form-group'>  
+                           <label for="psw"><b>Confirm Password</b></label>
+                           <input type="password" id="rcpass"class="form-control" placeholder="Enter Password" name="psw" required>                  
+                      </div>
+                      <div class="text-center"> <button id="register" class="btn alert-danger" >Register</button></div>                                    
+                </div>
+            </div>    
+     </div>  
+     <!-- Register end    -->
+</body>
+</html>
